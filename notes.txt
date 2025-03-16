@@ -1,0 +1,16 @@
+# Python setup
+
+# setup a python environment
+python3 -m venv my_virtual_env
+
+# activate a python environment
+source my_virtual_env/bin/activate
+
+# Show the dependencies
+pip3 list
+
+# install all dependencies
+pip3 install -r requirements.txt
+
+# Deactivate a python environment
+deactivate
