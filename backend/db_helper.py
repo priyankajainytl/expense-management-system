@@ -1,5 +1,15 @@
 import mysql.connector
 from contextlib import contextmanager
+import logging
+#create a custom logger
+logger=logging.getLogger('db_helper')
+
+#configure the custom logger
+logger.setLevel(logging.DEBUG)
+file_handler = logging.FileHandler('server.log')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 @contextmanager
 def get_db_cursor(commit=False):
@@ -19,6 +29,7 @@ def get_db_cursor(commit=False):
 
 
 def fetch_expenses_for_date(expense_date):
+    logger.info(f"fetch_expenses_for_date called with{expense_date}")
     with get_db_cursor() as cursor:
         cursor.execute("SELECT * FROM expenses WHERE expense_date = %s", (expense_date,))
         expenses = cursor.fetchall()
@@ -26,11 +37,13 @@ def fetch_expenses_for_date(expense_date):
 
 
 def delete_expenses_for_date(expense_date):
+    logger.info(f"delete_expenses_for_date called with{expense_date}")
     with get_db_cursor(commit=True) as cursor:
         cursor.execute("DELETE FROM expenses WHERE expense_date = %s", (expense_date,))
 
 
 def insert_expense(expense_date, amount, category, notes):
+    logger.info(f"insert_expenses_for_date called with date:{expense_date},amount:{amount},category:{category},notes:{notes}")
     with get_db_cursor(commit=True) as cursor:
         cursor.execute(
             "INSERT INTO expenses (expense_date, amount, category, notes) VALUES (%s, %s, %s, %s)",
@@ -39,6 +52,7 @@ def insert_expense(expense_date, amount, category, notes):
 
 
 def fetch_expense_summary(start_date, end_date):
+    logger.info(f"fetch_expense_summary called with start:{start_date} end:{end_date}")
     with get_db_cursor() as cursor:
         cursor.execute(
             '''SELECT category, SUM(amount) as total 
