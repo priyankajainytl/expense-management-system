@@ -2,11 +2,12 @@ import streamlit as st
 from datetime import datetime
 import requests
 
-API_URL="https://localhost:8000"
+API_URL="http://localhost:8000"
 
 st.title("Expense Managment System")
 
 tab1,tab2 =st.tabs(["Add/Update","Analytics"])
+
 with tab1:
     selected_date=st.date_input("Enter Date",datetime(2024,8,1),label_visibility="collapsed")
     response=requests.get(f"{API_URL}/expenses/{selected_date}")
