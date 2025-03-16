@@ -27,7 +27,9 @@ This project is an expense management system that consists of a Streamlit fronte
    ```commandline
     uvicorn server.server:app --reload
    ```
+   The backend server runs on localhost:8000 port
+
 1. **Run the Streamlit app:**:   
    ```commandline
     streamlit run frontend/app.py
-   ```
+   ```   The UI runs on localhost:8501 by default## Local testing### PostmanYou can use the local APIs in Postman for quick testing. Refer to the [collection here](./postman-collection/)### PytestRun all tests by running:   ```python   pytest -v   ```[add-update-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/add-update.png?raw=true

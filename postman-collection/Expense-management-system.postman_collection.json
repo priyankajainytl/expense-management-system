@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "883a789d-1b6c-4629-a6f5-8418d40dce48",
+		"name": "Expense-management-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15213984"
+	},
+	"item": [
+		{
+			"name": "Get expense by date",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {",
+							"    pm.expect(pm.response.code).to.equal(404);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required field - detail\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.detail).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/expenses/v1/2024-08-01",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"expenses",
+						"v1",
+						"2024-08-01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST submit expense for date",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {",
+							"    pm.expect(pm.response.code).to.equal(404);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required field - detail\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.detail).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"amount\": 100.0,\n        \"category\": \"Internet\",\n        \"notes\": \"Monthly internet payment\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/expenses/2025-03-16",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"expenses",
+						"2025-03-16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get expense by date - use response model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 404\", function () {",
+							"    pm.expect(pm.response.code).to.equal(404);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required field - detail\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.detail).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/expenses/2025-03-16",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"expenses",
+						"2025-03-16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello world",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000",
+					"host": [
+						"localhost"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Monthly expense summary",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/monthly_summary",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"monthly_summary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
