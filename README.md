@@ -56,6 +56,6 @@ Run all tests by running:
    pytest -v
    ```
 
-[add-update-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/add-update.png?raw=true
-[category-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/category.png?raw=true
-[monthly-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/monthly.png?raw=true
+[add-update-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/images/add-update.png?raw=true
+[category-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/images/category.png?raw=true
+[monthly-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/images/monthly.png?raw=true
