@@ -13,13 +13,13 @@ This project is an expense management system that consists of a Streamlit fronte
 
 ## Endpoints
 1. Add/update expenses
-![add-update-expense](add-update-image)
+![add-update-expense][add-update-image]
 
 2. View analytics by category
-![view analytics by category](category-image)
+![view analytics by category][category-image]
 
 3. View analytics by month
-![view analytics by monthly](monthly-image)
+![view analytics by monthly][monthly-image]
 
 ## Setup Instructions
 
@@ -56,6 +56,6 @@ Run all tests by running:
    pytest -v
    ```
 
-[add-update-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/images/add-update.png?raw=true
-[category-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/images/category.png?raw=true
-[monthly-image]: https://github.com/priyankajainytl/expense-management-system/blob/main/images/monthly.png?raw=true
+[add-update-image]: https://raw.githubusercontent.com/priyankajainytl/expense-management-system/main/images/add-update.png
+[category-image]: https://raw.githubusercontent.com/priyankajainytl/expense-management-system/main/images/category.png
+[monthly-image]: https://raw.githubusercontent.com/priyankajainytl/expense-management-system/main/images/monthly.png
